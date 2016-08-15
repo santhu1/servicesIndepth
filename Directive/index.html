@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+<div ng-controller="BookController as books">
+   <h1>Hello {{books.appName}} !</h1>
+
+    <h3>All Books</h3>
+
+    <div>
+        <ul>
+            <li ng-repeat = "book in books.allBooks">{{book.title}} - {{book.author}}</li>
+        </ul>
+    </div>
+
+
+
+    <h3>All Readers</h3>
+
+    <div>
+        <ul>
+           <li ng-repeat = "reader in books.allReaders">{{reader.name}} - {{books.getBadge(reader.totalMinutesRead)}}</li>
+        </ul>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+<script src="public/app/app.js"></script>
+<script src="public/app/books/BooksController.js"></script>
+<script src="public/app/books/services/dataService.js"></script>
+<script src="public/app/books/services/loggerService.js"></script>
+<script src="public/app/books/services/constantService.js"></script>
+<script src="public/app/books/services/badgeService.js"></script>
+</body>
+</html>
